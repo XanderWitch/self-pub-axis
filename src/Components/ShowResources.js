@@ -1,7 +1,17 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import ReadOnlyRow from './ReadOnlyRow';
+import EditableRow from './EditableRow';
+import Paper from '@mui/material/Paper';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TablePagination from '@mui/material/TablePagination';
+import TableRow from '@mui/material/TableRow';
 
-export default function FetchNews() {
+export default function ShowResources() {
 	const ENDPOINT =
 		'https://crudcrud.com/api/776d23438df143b9be860123700b634d/pubResources';
 
@@ -111,50 +121,52 @@ export default function FetchNews() {
 	const handleCancelClick = () => setEditResourceId(null);
 
 	return (
-		<div className='table-responsive'>
-			<div className='table-div'>
+		<div>
+			<div>
 				<form onSubmit={handleEditFormSubmit}>
-					<table className='table'>
-						<thead>
-							<tr>
-								<th className='text-center'>Title</th>
-								<th className='text-center'>Creator</th>
-								<th className='text-center'>Link</th>
-								<th className='text-center'>
-									Category
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							{APIData.map((data, index) => (
-								<>
-									{editResourceId === data._id ? (
-										<EditableRow
-											editFormData={
-												editFormData
-											}
-											handleEditFormChange={
-												handleEditFormChange
-											}
-											handleCancelClick={
-												handleCancelClick
-											}
-										/>
-									) : (
-										<ReadOnlyRow
-											data={data}
-											handleEditClick={
-												handleEditClick
-											}
-											handleDeleteClick={
-												handleDeleteClick
-											}
-										/>
-									)}
-								</>
-							))}
-						</tbody>
-					</table>
+					<TableContainer sx={{ maxHeight: 440 }}>
+						<Table stickyHeader aria-label='sticky table'>
+							<TableHead>
+								<TableRow>
+									<TableCell>Title</TableCell>
+									<TableCell>Creator</TableCell>
+									<TableCell>Link</TableCell>
+									<TableCell>Category</TableCell>
+									<TableCell>Actions</TableCell>
+								</TableRow>
+							</TableHead>
+							<TableBody>
+								{APIData.map((data, index) => (
+									<>
+										{editResourceId ===
+										data._id ? (
+											<EditableRow
+												editFormData={
+													editFormData
+												}
+												handleEditFormChange={
+													handleEditFormChange
+												}
+												handleCancelClick={
+													handleCancelClick
+												}
+											/>
+										) : (
+											<ReadOnlyRow
+												data={data}
+												handleEditClick={
+													handleEditClick
+												}
+												handleDeleteClick={
+													handleDeleteClick
+												}
+											/>
+										)}
+									</>
+								))}
+							</TableBody>
+						</Table>
+					</TableContainer>
 				</form>
 			</div>
 		</div>

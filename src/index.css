@@ -1,11 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 body {
 	background-color: #2e3033;
-
 	color: #f0f0f0;
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-		'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-		'Helvetica Neue', sans-serif;
+	font-family: 'Lato', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -20,6 +19,48 @@ img.logo {
 	width: 150px;
 }
 
-h1 {
-	margin: 0 12% 0 12%;
+a:link {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #e9ccff;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+p {
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+th {
+	color: #e9ccff;
+}
+.jumpLink {
+	color: lightgrey;
+}
+
+.indent {
+	margin-left: 7%;
+	margin-right: 7%;
+}
+
+.item-form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 3%;
+}
+
+.item-form-box {
+	background-color: indigo;
+	border: 1px white solid;
+	width: 75%;
+	padding: 3%;
 }

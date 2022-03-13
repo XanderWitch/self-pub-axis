@@ -1,23 +1,14 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import React, { useEffect, useState } from 'react';
+import AddResource from './AddResource';
+import ShowResources from './ShowResources';
 
-export default function Resources() {
+const Resources = () => {
 	return (
-		<Box
-			sx={{
-				display: 'flex',
-				flexWrap: 'wrap',
-				'& > :not(style)': {
-					m: 2,
-					width: 300,
-					height: 300,
-				},
-			}}>
-			<Paper elevation={4} />
-			<Paper />
-			<Paper elevation={4} />
-		</Box>
+		<div>
+			<ShowResources />
+			<AddResource />
+		</div>
 	);
-}
+};
+
+export default Resources;

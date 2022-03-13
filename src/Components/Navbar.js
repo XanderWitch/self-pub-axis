@@ -7,9 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import logo from '../Images/SPALogo.png';
@@ -28,7 +26,9 @@ const Navbar = () => {
 	};
 
 	return (
-		<AppBar position='static' style={{ background: 'black' }}>
+		<AppBar
+			position='static'
+			style={{ background: 'indigo', margin: '0' }}>
 			<Container maxWidth='xl'>
 				<Toolbar disableGutters>
 					<Typography
@@ -140,7 +140,10 @@ const Navbar = () => {
 									color: 'white',
 									display: 'block',
 								}}>
-								<Typography textAlign='center'>
+								<Typography
+									variant='h6'
+									underline='none'
+									textAlign='center'>
 									<Link
 										style={{
 											textDeocoration: 'none',
