@@ -42,6 +42,11 @@ p {
 th {
 	color: #e9ccff;
 }
+
+.form-title {
+	color: indigo;
+	margin: 0 0 1em 0;
+}
 .jumpLink {
 	color: lightgrey;
 }
@@ -55,12 +60,19 @@ th {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 3%;
+	margin-top: 2%;
 }
 
 .item-form-box {
-	background-color: indigo;
-	border: 1px white solid;
-	width: 75%;
+	max-width: 75%;
 	padding: 3%;
+}
+
+.MUItable {
+	display: flex;
+	justify-content: center;
+	margin-top: 2%;
+	margin-left: 10%;
+	margin-right: 10%;
+	max-width: 80%;
 }

@@ -1,5 +1,15 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { MenuItem } from '@mui/material';
+import { Stack } from '@mui/material';
+import { Button } from '@mui/material';
+import { Select } from '@mui/material';
+import InputLabel from '@mui/material/InputLabel';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import OutlinedInput from '@mui/material/OutlinedInput';
 
 export default function AddResource() {
 	const [title, setTitle] = useState('');
@@ -18,66 +28,142 @@ export default function AddResource() {
 			}
 		);
 	};
+
+	const categories = [
+		'Article/Blog Post',
+		'Blog',
+		'Book',
+		'Online Group or Forum',
+		'Organization',
+		'Podcast',
+		'Podcast Episode',
+		'Social Media Site',
+		'Software',
+		'Video',
+		'Website',
+		'YouTube Channel',
+	];
+
 	return (
-		<div className='item-form'>
-			<div className='item-form-box'>
-				<h2>Add a New Resource</h2>
-				<form>
-					<label className='col-form-label'>Title</label>
-					<input
-						className='form-control'
-						type='text'
-						name='title'
-						id='title'
-						placeholder='Enter the resource title.'
-						onChange={(e) => setTitle(e.target.value)}
-					/>
-					<label className='col-form-label'>Creator</label>
-					<input
-						className='form-control'
-						type='text'
-						name='creator'
-						id='creator'
-						placeholder='Enter the resource creator.'
-						onChange={(e) => setCreator(e.target.value)}
-					/>
-					<label className='col-form-label'>Link</label>
-					<input
-						className='form-control'
-						type='text'
-						name='link'
-						id='link'
-						placeholder='Enter the resource link'
-						onChange={(e) => setLink(e.target.value)}
-					/>
-					<label className='col-form-label'>Category</label>
-					<select onChange={(e) => setCategory(e.target.value)}>
-						<option value='Article'>Article/Blog Post</option>
-						<option value='Blog'>Blog</option>
-						<option value='Book'>Book</option>
-						<option value='Group or Forum'>
-							Group or Forum
-						</option>
-						<option value='Podcast'>Podcast</option>
-						<option value='Podcast Episode'>
-							Podcast Episode
-						</option>
-						<option value='Social Media Site'>
-							Social Media Site
-						</option>
-						<option value='Software'>Software</option>
-						<option value='Video'>Video</option>
-						<option value='Website'>Website</option>
-						<option value='YouTube Channel'>
-							YouTube Channel
-						</option>
-					</select>
-					<button
-						onClick={postData}
-						className='btn btn-secondary mt-3'>
-						Submit
-					</button>
-				</form>
+		<div>
+			<hr />
+			<div>
+				<Box
+					p={3}
+					component='form'
+					sx={{
+						'& > :not(style)': { m: 1, width: '80vw' },
+						backgroundColor: 'lightgrey',
+						'&:hover': {
+							backgroundColor: 'white',
+						},
+						border: '2px solid indigo',
+						maxWidth: '30%',
+						display: 'flex',
+						justifyContent: 'center',
+						marginRight: '35%',
+						marginLeft: '35%',
+						marginTop: '2%',
+					}}
+					noValidate
+					autoComplete='off'>
+					<FormControl sx={{ m: 1, maxWidth: '80%' }}>
+						<h2 className='form-title'>Add a New Resource</h2>
+						<TextField
+							sx={{ mb: 3 }}
+							id='outlined-textarea'
+							label='Resource Title'
+							defaultValue='Resource Title'
+							onChange={(e) => setTitle(e.target.value)}
+						/>
+
+						<TextField
+							sx={{ mb: 3 }}
+							id='outlined-textarea'
+							label='Resource Creator'
+							defaultValue='Resource Creator'
+							onChange={(e) => setCreator(e.target.value)}
+						/>
+						<TextField
+							sx={{ mb: 3 }}
+							id='outlined-textarea'
+							label='Resource Link'
+							defaultValue='Resource Link'
+							onChange={(e) => setLink(e.target.value)}
+						/>
+
+						<Select
+							sx={{ mb: 3 }}
+							id='category'
+							label='Category'
+							defaultValue='Category'
+							onChange={(e) =>
+								setCategory(e.target.value)
+							}>
+							<MenuItem
+								key='Article/Blog Post'
+								value='Article/Blog Post'>
+								Article/Blog Post
+							</MenuItem>
+							<MenuItem key='Blog' value='Blog'>
+								Blog
+							</MenuItem>
+							<MenuItem key='Book' value='Book'>
+								Book
+							</MenuItem>
+							<MenuItem
+								key='Online Group or Forum'
+								value='Online Group or Forum'>
+								Online Group or Forum
+							</MenuItem>
+							<MenuItem
+								key='Organization'
+								value='Organization'>
+								Organization
+							</MenuItem>
+							<MenuItem key='Podcast' value='Podcast'>
+								Podcast
+							</MenuItem>
+							<MenuItem
+								key='Podcast Episode'
+								value='Podcast Episode'>
+								Podcast Episode
+							</MenuItem>
+							<MenuItem
+								key='Social Media Site'
+								value='Social Media Site'>
+								Social Media Site
+							</MenuItem>
+							<MenuItem key='Software' value='Software'>
+								Software
+							</MenuItem>
+							<MenuItem key='Video' value='Video'>
+								Video
+							</MenuItem>
+							<MenuItem key='Website' value='Website'>
+								Website
+							</MenuItem>
+							<MenuItem
+								key='YouTube Channel'
+								value='YouTube Channel'>
+								YouTube Channel
+							</MenuItem>
+							<MenuItem key='Other' value='Other'>
+								Other
+							</MenuItem>
+						</Select>
+						<Stack spacing={2} direction='row'>
+							<Button
+								style={{ backgroundColor: 'indigo' }}
+								variant='contained'
+								color='secondary'
+								onClick={postData}
+								className='btn btn-secondary mt-3'>
+								Submit
+							</Button>
+						</Stack>
+					</FormControl>
+				</Box>
 			</div>
 		</div>
 	);

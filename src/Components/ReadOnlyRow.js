@@ -21,14 +21,14 @@ const ReadOnlyRow = ({ data, handleEditClick, handleDeleteClick }) => {
 			<td>
 				<Button
 					variant='contained'
-					color='secondary'
+					style={{ backgroundColor: 'indigo' }}
 					sx={{ m: 1 }}
 					onClick={(event) => handleEditClick(event, data)}>
 					<EditIcon fontSize='small' />
 				</Button>
 				<Button
 					variant='contained'
-					color='error'
+					style={{ backgroundColor: 'darkgrey' }}
 					sx={{ m: 1 }}
 					data={data}
 					onClick={() => handleDeleteClick(data._id)}>

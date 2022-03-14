@@ -124,9 +124,14 @@ export default function ShowResources() {
 		<div>
 			<div>
 				<form onSubmit={handleEditFormSubmit}>
-					<TableContainer sx={{ maxHeight: 440 }}>
+					<TableContainer
+						className='MUItable'
+						sx={{ maxHeight: 440, maxWidth: '80%' }}>
 						<Table stickyHeader aria-label='sticky table'>
-							<TableHead>
+							<TableHead
+								sx={{
+									backgroundColor: '#D1C4E9',
+								}}>
 								<TableRow>
 									<TableCell>Title</TableCell>
 									<TableCell>Creator</TableCell>
