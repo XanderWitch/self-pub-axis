@@ -43,17 +43,33 @@ th {
 	color: #e9ccff;
 }
 
+.addForm {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.formBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 95vw;
+}
+
 .form-title {
 	color: indigo;
 	margin: 0 0 1em 0;
-}
-.jumpLink {
-	color: lightgrey;
 }
 
 .indent {
 	margin-left: 7%;
 	margin-right: 7%;
+}
+
+.inputBoxes {
+	width: 12vw;
+	margin-right: 1em;
 }
 
 .item-form {
@@ -69,10 +85,11 @@ th {
 }
 
 .MUItable {
+	border-bottom: 2px solid white;
 	display: flex;
 	justify-content: center;
-	margin-top: 2%;
-	margin-left: 10%;
-	margin-right: 10%;
-	max-width: 80%;
+	align-items: start;
+	margin-top: 4vh;
+	margin-bottom: 4vh;
+	padding: 3%;
 }

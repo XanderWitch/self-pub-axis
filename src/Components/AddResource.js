@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { MenuItem } from '@mui/material';
+import { Grid, MenuItem } from '@mui/material';
 import { Stack } from '@mui/material';
 import { Button } from '@mui/material';
 import { Select } from '@mui/material';
@@ -29,74 +29,72 @@ export default function AddResource() {
 		);
 	};
 
-	const categories = [
-		'Article/Blog Post',
-		'Blog',
-		'Book',
-		'Online Group or Forum',
-		'Organization',
-		'Podcast',
-		'Podcast Episode',
-		'Social Media Site',
-		'Software',
-		'Video',
-		'Website',
-		'YouTube Channel',
-	];
+	function refreshPage() {
+		window.location.reload(false);
+	}
+
+	function postAndRefresh() {
+		postData();
+		refreshPage();
+	}
 
 	return (
-		<div>
-			<hr />
-			<div>
-				<Box
-					p={3}
-					component='form'
-					sx={{
-						'& > :not(style)': { m: 1, width: '80vw' },
-						backgroundColor: 'lightgrey',
-						'&:hover': {
-							backgroundColor: 'white',
-						},
-						border: '2px solid indigo',
-						maxWidth: '30%',
-						display: 'flex',
-						justifyContent: 'center',
-						marginRight: '35%',
-						marginLeft: '35%',
-						marginTop: '2%',
-					}}
-					noValidate
-					autoComplete='off'>
-					<FormControl sx={{ m: 1, maxWidth: '80%' }}>
-						<h2 className='form-title'>Add a New Resource</h2>
-						<TextField
-							sx={{ mb: 3 }}
-							id='outlined-textarea'
-							label='Resource Title'
-							defaultValue='Resource Title'
-							onChange={(e) => setTitle(e.target.value)}
-						/>
+		<Grid
+			container
+			spacing={0}
+			direction='column'
+			alignItems='center'
+			justifyContent='center'>
+			<Box
+				p={3}
+				component='form'
+				className='formBox'
+				sx={{
+					'& > :not(style)': { m: 1 },
+					backgroundColor: '#b89dd1',
+					'&:hover': {
+						backgroundColor: '#ddd0e9',
+					},
+				}}
+				noValidate
+				autoComplete='off'>
+				<form>
+					<h2 className='form-title'>Add a New Resource</h2>
+					<TextField
+						sx={{ mr: 3 }}
+						className='inputBoxes'
+						id='outlined-textarea'
+						label='Resource Title'
+						defaultValue='Resource Title'
+						onChange={(e) => setTitle(e.target.value)}
+					/>
 
-						<TextField
-							sx={{ mb: 3 }}
-							id='outlined-textarea'
-							label='Resource Creator'
-							defaultValue='Resource Creator'
-							onChange={(e) => setCreator(e.target.value)}
-						/>
-						<TextField
-							sx={{ mb: 3 }}
-							id='outlined-textarea'
-							label='Resource Link'
-							defaultValue='Resource Link'
-							onChange={(e) => setLink(e.target.value)}
-						/>
-
+					<TextField
+						sx={{ mr: 3 }}
+						className='inputBoxes'
+						id='outlined-textarea'
+						label='Resource Creator'
+						defaultValue='Resource Creator'
+						onChange={(e) => setCreator(e.target.value)}
+					/>
+					<TextField
+						sx={{ mr: 3 }}
+						className='inputBoxes'
+						id='outlined-textarea'
+						label='Resource Link'
+						defaultValue='Resource Link'
+						onChange={(e) => setLink(e.target.value)}
+					/>
+					<FormControl
+						variant='standard'
+						sx={{ minWidth: '12vw' }}>
+						<InputLabel id='category'>Category</InputLabel>
 						<Select
-							sx={{ mb: 3 }}
+							className='inputBoxes'
+							sx={{ mr: 3 }}
+							labelId='category'
 							id='category'
-							label='Category'
-							defaultValue='Category'
+							value={category}
 							onChange={(e) =>
 								setCategory(e.target.value)
 							}>
@@ -152,19 +150,16 @@ export default function AddResource() {
 								Other
 							</MenuItem>
 						</Select>
-						<Stack spacing={2} direction='row'>
-							<Button
-								style={{ backgroundColor: 'indigo' }}
-								variant='contained'
-								color='secondary'
-								onClick={postData}
-								className='btn btn-secondary mt-3'>
-								Submit
-							</Button>
-						</Stack>
 					</FormControl>
-				</Box>
-			</div>
-		</div>
+					<Button
+						style={{ backgroundColor: 'indigo' }}
+						variant='contained'
+						color='secondary'
+						onClick={postAndRefresh}>
+						Submit
+					</Button>
+				</form>
+			</Box>
+		</Grid>
 	);
 }

@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ReadOnlyRow from './ReadOnlyRow';
 import EditableRow from './EditableRow';
-import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -10,6 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import { Grid } from '@mui/material';
 
 export default function ShowResources() {
 	const ENDPOINT =
@@ -23,6 +23,10 @@ export default function ShowResources() {
 		});
 	}, []);
 
+	function refreshPage() {
+		window.location.reload(false);
+	}
+
 	const updateAPIData = (_id) => {
 		axios.put(`${ENDPOINT}/${_id}`, {
 			title: editFormData.title,
@@ -32,9 +36,6 @@ export default function ShowResources() {
 		})
 			.then((res) => {
 				getData();
-
-				console.log(res);
-				console.log('it works');
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -60,6 +61,7 @@ export default function ShowResources() {
 			.catch(function (error) {
 				console.log(error);
 			});
+		refreshPage();
 	};
 
 	const handleEditClick = (event, data) => {
@@ -121,59 +123,56 @@ export default function ShowResources() {
 	const handleCancelClick = () => setEditResourceId(null);
 
 	return (
-		<div>
-			<div>
-				<form onSubmit={handleEditFormSubmit}>
-					<TableContainer
-						className='MUItable'
-						sx={{ maxHeight: 440, maxWidth: '80%' }}>
-						<Table stickyHeader aria-label='sticky table'>
-							<TableHead
-								sx={{
-									backgroundColor: '#D1C4E9',
-								}}>
-								<TableRow>
-									<TableCell>Title</TableCell>
-									<TableCell>Creator</TableCell>
-									<TableCell>Link</TableCell>
-									<TableCell>Category</TableCell>
-									<TableCell>Actions</TableCell>
-								</TableRow>
-							</TableHead>
-							<TableBody>
-								{APIData.map((data, index) => (
-									<>
-										{editResourceId ===
-										data._id ? (
-											<EditableRow
-												editFormData={
-													editFormData
-												}
-												handleEditFormChange={
-													handleEditFormChange
-												}
-												handleCancelClick={
-													handleCancelClick
-												}
-											/>
-										) : (
-											<ReadOnlyRow
-												data={data}
-												handleEditClick={
-													handleEditClick
-												}
-												handleDeleteClick={
-													handleDeleteClick
-												}
-											/>
-										)}
-									</>
-								))}
-							</TableBody>
-						</Table>
-					</TableContainer>
-				</form>
-			</div>
-		</div>
+		<Grid
+			container
+			spacing={0}
+			direction='column'
+			alignItems='center'
+			justifyContent='center'>
+			<form onSubmit={handleEditFormSubmit}>
+				<TableContainer className='MUItable'>
+					<Table stickyHeader aria-label='sticky table'>
+						<TableHead>
+							<TableRow align='left'>
+								<TableCell>Title</TableCell>
+								<TableCell>Creator</TableCell>
+								<TableCell>Link</TableCell>
+								<TableCell>Category</TableCell>
+								<TableCell>Actions</TableCell>
+							</TableRow>
+						</TableHead>
+						<TableBody>
+							{APIData.map((data) => (
+								<>
+									{editResourceId === data._id ? (
+										<EditableRow
+											editFormData={
+												editFormData
+											}
+											handleEditFormChange={
+												handleEditFormChange
+											}
+											handleCancelClick={
+												handleCancelClick
+											}
+										/>
+									) : (
+										<ReadOnlyRow
+											data={data}
+											handleEditClick={
+												handleEditClick
+											}
+											handleDeleteClick={
+												handleDeleteClick
+											}
+										/>
+									)}
+								</>
+							))}
+						</TableBody>
+					</Table>
+				</TableContainer>
+			</form>
+		</Grid>
 	);
 }
