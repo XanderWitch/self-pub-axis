@@ -11,7 +11,7 @@ const HomePage = () => {
 				Find your way in the self publishing world with resoruces
 				for all your self-publishing needs.
 			</p>
-			<h2>Popular Self-Publishing Companies</h2>
+			<h2>Top Self-Publishing Companies</h2>
 			<SelfPubCompanies />
 		</div>
 	);

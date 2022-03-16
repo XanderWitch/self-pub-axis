@@ -7,15 +7,13 @@ import { Link } from '@mui/material';
 const ReadOnlyRow = ({ data, handleEditClick, handleDeleteClick }) => {
 	return (
 		<tr>
-			<td key={data._id}>{data.title}</td>
-
-			<td key={data._id}>{data.creator}</td>
-
-			<td key={data._id}>
-				<Link target='_blank' rel='noopener'>
-					{data.link}
+			<td key={data._id} className='bigCell'>
+				<Link target='_blank' rel='noopener' href={data.link}>
+					{data.title}
 				</Link>
 			</td>
+
+			<td key={data._id}>{data.creator}</td>
 
 			<td key={data._id}>{data.category}</td>
 			<td>

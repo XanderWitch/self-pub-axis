@@ -9,7 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import { Grid } from '@mui/material';
+import { createTheme, Grid } from '@mui/material';
 
 export default function ShowResources() {
 	const ENDPOINT =
@@ -40,6 +40,7 @@ export default function ShowResources() {
 			.catch(function (error) {
 				console.log(error);
 			});
+		refreshPage();
 	};
 
 	const [data, setData] = useState(APIData);
@@ -54,9 +55,6 @@ export default function ShowResources() {
 		axios.delete(`${ENDPOINT}/${_id}`)
 			.then((res) => {
 				getData();
-
-				console.log(res);
-				console.log('it works');
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -118,6 +116,10 @@ export default function ShowResources() {
 		setEditFormData(newFormData);
 	};
 
+	const handleSelectChange = (event) => {
+		setEditFormData(event.target.value);
+	};
+
 	const [editResourceId, setEditResourceId] = useState(null);
 
 	const handleCancelClick = () => setEditResourceId(null);
@@ -132,13 +134,45 @@ export default function ShowResources() {
 			<form onSubmit={handleEditFormSubmit}>
 				<TableContainer className='MUItable'>
 					<Table stickyHeader aria-label='sticky table'>
-						<TableHead>
-							<TableRow align='left'>
-								<TableCell>Title</TableCell>
-								<TableCell>Creator</TableCell>
-								<TableCell>Link</TableCell>
-								<TableCell>Category</TableCell>
-								<TableCell>Actions</TableCell>
+						<TableHead
+							className='tableHeader'
+							sx={{ backgroundColor: 'orange' }}>
+							<TableRow>
+								<TableCell
+									sx={{
+										backgroundColor: '#814CA7',
+										color: 'white',
+										width: '50%',
+									}}>
+									Title
+								</TableCell>
+								<TableCell
+									sx={{
+										backgroundColor: '#814CA7',
+										color: 'white',
+										width: '20%',
+									}}>
+									Creator
+								</TableCell>
+								<TableCell
+									sx={{
+										backgroundColor: '#814CA7',
+										color: 'white',
+										width: '12%',
+									}}
+									align='left'>
+									Category
+								</TableCell>
+								<TableCell
+									align='left'
+									sx={{
+										backgroundColor: '#814CA7',
+										color: 'white',
+										width: '17%',
+										align: 'left',
+									}}>
+									Actions
+								</TableCell>
 							</TableRow>
 						</TableHead>
 						<TableBody>
@@ -151,6 +185,9 @@ export default function ShowResources() {
 											}
 											handleEditFormChange={
 												handleEditFormChange
+											}
+											handleSelectChange={
+												handleSelectChange
 											}
 											handleCancelClick={
 												handleCancelClick

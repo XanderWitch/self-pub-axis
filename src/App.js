@@ -5,17 +5,26 @@ import Navbar from './Components/Navbar';
 import HomePage from './Components/HomePage';
 import Resources from './Components/Resources';
 import Checklist from './Components/Checklist';
+import UpdateResource from './Components/Resources/UpdateResource';
+import Footer from './Components/Footer';
+
 import { Route, Routes } from 'react-router';
 
 export default function App() {
 	return (
 		<div>
 			<Navbar />
-			<Routes>
-				<Route path='/' element={<HomePage />} />
-				<Route path='Resources' element={<Resources />} />
-				<Route path='Checklist' element={<Checklist />} />
-			</Routes>
+			<div className='mainBody'>
+				<Routes>
+					<Route path='/' element={<HomePage />} />
+					<Route path='Resources' element={<Resources />} />
+					<Route
+						path='Checklist'
+						element={<Checklist />}></Route>
+					<Route path='Update' element={<UpdateResource />} />
+				</Routes>
+			</div>
+			<Footer />
 		</div>
 	);
 }

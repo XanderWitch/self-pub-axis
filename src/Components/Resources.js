@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import AddResource from './AddResource';
-import ShowResources from './ShowResources';
+import React from 'react';
+import CreateResource from './Resources/CreateResource';
+import ResourceCard from './Resources/ReadResources';
 
 const Resources = () => {
 	return (
 		<div>
-			<ShowResources />
-			<AddResource />
+			<h1>Recommended Resources</h1>
+			<ResourceCard />
+			<CreateResource />
 		</div>
 	);
 };

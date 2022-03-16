@@ -3,8 +3,8 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Masonry from '@mui/lab/Masonry';
 import { styled } from '@mui/material/styles';
-import { Container } from '@mui/material';
 import SPCArray from './SPCArray';
+import { Link } from '@mui/material';
 
 const Label = styled(Paper)(({ theme }) => ({
 	backgroundColor: theme.palette.mode === 'dark' ? 'secondary' : '#fdf',
@@ -25,19 +25,24 @@ export default function SelfPubCompanies() {
 			}}>
 			<Masonry columns={3} spacing={3}>
 				{SPCArray.map((item, title, link, index) => (
-					<div key={index}>
-						<Label sx={{ mb: 1 }}>{item.title}</Label>
-						<img
-							src={`${item.img}?w=300&auto=format`}
-							srcSet={`${item.img}?w=300&auto=format&dpr=2 2x`}
-							alt={item.title}
-							loading='lazy'
-							style={{
-								display: 'block',
-								width: '100%',
-							}}
-						/>
-					</div>
+					<Link target='_blank' rel='noopener' href={item.link}>
+						<div key={index}>
+							<Label sx={{ mb: 1, color: 'indigo' }}>
+								{item.title}
+							</Label>
+
+							<img
+								src={`${item.img}?w=300&auto=format`}
+								srcSet={`${item.img}?w=300&auto=format&dpr=2 2x`}
+								alt={item.title}
+								loading='lazy'
+								style={{
+									display: 'block',
+									width: '100%',
+								}}
+							/>
+						</div>
+					</Link>
 				))}
 			</Masonry>
 		</Box>

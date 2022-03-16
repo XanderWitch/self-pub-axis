@@ -3,15 +3,12 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Grid, MenuItem } from '@mui/material';
-import { Stack } from '@mui/material';
 import { Button } from '@mui/material';
 import { Select } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
-import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
-import OutlinedInput from '@mui/material/OutlinedInput';
 
-export default function AddResource() {
+export default function CreateResource() {
 	const [title, setTitle] = useState('');
 	const [creator, setCreator] = useState('');
 	const [link, setLink] = useState('');
@@ -49,13 +46,6 @@ export default function AddResource() {
 				p={3}
 				component='form'
 				className='formBox'
-				sx={{
-					'& > :not(style)': { m: 1 },
-					backgroundColor: '#b89dd1',
-					'&:hover': {
-						backgroundColor: '#ddd0e9',
-					},
-				}}
 				noValidate
 				autoComplete='off'>
 				<form>
@@ -73,18 +63,20 @@ export default function AddResource() {
 						sx={{ mr: 3 }}
 						className='inputBoxes'
 						id='outlined-textarea'
-						label='Resource Creator'
-						defaultValue='Resource Creator'
-						onChange={(e) => setCreator(e.target.value)}
-					/>
-					<TextField
-						sx={{ mr: 3 }}
-						className='inputBoxes'
-						id='outlined-textarea'
 						label='Resource Link'
 						defaultValue='Resource Link'
 						onChange={(e) => setLink(e.target.value)}
 					/>
+
+					<TextField
+						sx={{ mr: 3 }}
+						className='inputBoxes'
+						id='outlined-textarea'
+						label='Resource Creator/Author'
+						defaultValue='Resource Creator/Author'
+						onChange={(e) => setCreator(e.target.value)}
+					/>
+
 					<FormControl
 						variant='standard'
 						sx={{ minWidth: '12vw' }}>
@@ -98,57 +90,33 @@ export default function AddResource() {
 							onChange={(e) =>
 								setCategory(e.target.value)
 							}>
-							<MenuItem
-								key='Article/Blog Post'
-								value='Article/Blog Post'>
+							<MenuItem value='Article/Blog Post'>
 								Article/Blog Post
 							</MenuItem>
-							<MenuItem key='Blog' value='Blog'>
-								Blog
-							</MenuItem>
-							<MenuItem key='Book' value='Book'>
-								Book
-							</MenuItem>
-							<MenuItem
-								key='Online Group or Forum'
-								value='Online Group or Forum'>
+							<MenuItem value='Blog'>Blog</MenuItem>
+							<MenuItem value='Book'>Book</MenuItem>
+							<MenuItem value='Online Group or Forum'>
 								Online Group or Forum
 							</MenuItem>
-							<MenuItem
-								key='Organization'
-								value='Organization'>
+							<MenuItem value='Organization'>
 								Organization
 							</MenuItem>
-							<MenuItem key='Podcast' value='Podcast'>
-								Podcast
-							</MenuItem>
-							<MenuItem
-								key='Podcast Episode'
-								value='Podcast Episode'>
+							<MenuItem value='Podcast'>Podcast</MenuItem>
+							<MenuItem value='Podcast Episode'>
 								Podcast Episode
 							</MenuItem>
-							<MenuItem
-								key='Social Media Site'
-								value='Social Media Site'>
+							<MenuItem value='Social Media Site'>
 								Social Media Site
 							</MenuItem>
-							<MenuItem key='Software' value='Software'>
+							<MenuItem value='Software'>
 								Software
 							</MenuItem>
-							<MenuItem key='Video' value='Video'>
-								Video
-							</MenuItem>
-							<MenuItem key='Website' value='Website'>
-								Website
-							</MenuItem>
-							<MenuItem
-								key='YouTube Channel'
-								value='YouTube Channel'>
+							<MenuItem value='Video'>Video</MenuItem>
+							<MenuItem value='Website'>Website</MenuItem>
+							<MenuItem value='YouTube Channel'>
 								YouTube Channel
 							</MenuItem>
-							<MenuItem key='Other' value='Other'>
-								Other
-							</MenuItem>
+							<MenuItem value='Other'>Other</MenuItem>
 						</Select>
 					</FormControl>
 					<Button
