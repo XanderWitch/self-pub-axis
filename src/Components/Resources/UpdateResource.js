@@ -64,6 +64,7 @@ export default function UpdateResource() {
 				console.log(error);
 			});
 		goBack();
+		refreshPage();
 	};
 
 	return (
