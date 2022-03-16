@@ -1,15 +1,40 @@
-import { adaptV4Theme } from '@mui/material';
-import React from 'react';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 
-const Footer = () => {
+function Copyright() {
 	return (
-		<div className='centered-item footer'>
-			<ul id='footer'>
-				Website Design & Development by Janell E. Robisch. Copyright
-				2022.
-			</ul>
-		</div>
+		<Typography color='white'>
+			{'Copyright © '}
+			Self-Publishing Axis {new Date().getFullYear()}
+		</Typography>
 	);
-};
+}
 
-export default Footer;
+export default function StickyFooter() {
+	return (
+		<Box
+			sx={{
+				display: 'flex',
+				flexDirection: 'column',
+				minHeight: '100vh',
+				width: '100vw',
+			}}>
+			<Box
+				className='footer'
+				component='footer'
+				sx={{
+					py: 3,
+					mt: 'auto',
+				}}>
+				<Container maxWidth='sm'>
+					<Typography className='footer'>
+						Website Design & Development by Janell E. Robisch
+					</Typography>
+					<Copyright />
+				</Container>
+			</Box>
+		</Box>
+	);
+}

@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from '@mui/material';
-import ConfirmDelete from './ConfirmDelete';
 
 export default function ResourceCard() {
 	const ENDPOINT =
@@ -36,9 +35,6 @@ export default function ResourceCard() {
 		axios.delete(`${ENDPOINT}/${_id}`)
 			.then((res) => {
 				getData();
-
-				console.log(res);
-				console.log('it works');
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -58,83 +54,90 @@ export default function ResourceCard() {
 	return (
 		<div className='resourceCard'>
 			{APIData.map((data, _id) => (
-				<Card
-					sx={{
-						width: '30%',
-						mr: 3,
-						mb: 3,
-						backgroundColor: 'white',
-						color: 'indigo',
-					}}>
-					<Grid
-						align='center'
-						container
-						direction='column'
-						justify='center'
-						alignItems='center'
-						style={{ minHeight: '25vh' }}
-						spacing={0}>
-						<Grid item xs={3}>
-							<CardContent>
-								<Button
-									variant='outlined'
-									sx={{
-										m: 1,
-										mb: 3,
-										backgroundColor: 'white',
-									}}>
-									<Link
-										target='_blank'
-										rel='noopener'
-										href={data.link}>
-										Go to {data.category}
+				<>
+					<Card
+						sx={{
+							width: '30%',
+							mr: 3,
+							mb: 3,
+							backgroundColor: 'white',
+							color: 'indigo',
+						}}>
+						<Grid
+							align='center'
+							container
+							direction='column'
+							justify='center'
+							alignItems='center'
+							style={{ minHeight: '25vh' }}
+							spacing={0}>
+							<Grid item xs={3}>
+								<CardContent>
+									<Button
+										variant='outlined'
+										sx={{
+											m: 1,
+											mb: 3,
+											backgroundColor: 'white',
+										}}>
+										<Link
+											target='_blank'
+											rel='noopener'
+											href={data.link}>
+											Go to {data.category}
+										</Link>
+									</Button>
+									<Typography
+										sx={{
+											fontSize: '1.5em',
+											fontWeight: 'bold',
+										}}
+										component='div'>
+										{data.title}
+									</Typography>
+									<Typography
+										sx={{
+											mb: 2.5,
+											fontSize: '1.25em',
+											fontStyle: 'italic',
+										}}
+										color='text.secondary'>
+										{data.creator}
+									</Typography>
+									<Link href='./Update'>
+										<Button
+											variant='contained'
+											style={{
+												backgroundColor:
+													'indigo',
+											}}
+											sx={{ m: 1 }}
+											onClick={() =>
+												setData(data)
+											}>
+											Update
+										</Button>
 									</Link>
-								</Button>
-								<Typography
-									sx={{
-										fontSize: '1.5em',
-										fontWeight: 'bold',
-									}}
-									component='div'>
-									{data.title}
-								</Typography>
-								<Typography
-									sx={{
-										mb: 2.5,
-										fontSize: '1.25em',
-										fontStyle: 'italic',
-									}}
-									color='text.secondary'>
-									{data.creator}
-								</Typography>
-								<Link href='./Update'>
 									<Button
 										variant='contained'
 										style={{
 											backgroundColor:
-												'indigo',
+												'darkgrey',
 										}}
 										sx={{ m: 1 }}
-										onClick={() => setData(data)}>
-										Update
+										data={data}
+										onClick={() =>
+											handleDeleteClick(
+												data._id
+											)
+										}>
+										Delete
 									</Button>
-								</Link>
-								<Button
-									variant='contained'
-									style={{
-										backgroundColor: 'darkgrey',
-									}}
-									sx={{ m: 1 }}
-									data={data}
-									onClick={() =>
-										handleDeleteClick(data._id)
-									}>
-									Delete
-								</Button>
-							</CardContent>
+								</CardContent>
+							</Grid>
 						</Grid>
-					</Grid>
-				</Card>
+					</Card>
+				</>
 			))}
 		</div>
 	);

@@ -37,14 +37,17 @@ export default function UpdateResource() {
 		setLink(localStorage.getItem('Link'));
 	}, []);
 
-	const goBack = () => {
-		navigate('/Resources');
-	};
-
 	const getData = () => {
 		axios.get(ENDPOINT).then((getData) => {
 			setAPIData(getData.data);
 		});
+	};
+
+	function refreshPage() {
+		window.location.reload(false);
+	}
+	const goBack = () => {
+		navigate('/Resources');
 	};
 
 	const updateAPIData = () => {
@@ -106,13 +109,11 @@ export default function UpdateResource() {
 						onChange={(e) => setCreator(e.target.value)}
 					/>
 
-					<FormControl
-						variant='standard'
-						sx={{ minWidth: '12vw' }}>
+					<FormControl variant='standard'>
 						<InputLabel id='category'>Category</InputLabel>
 						<Select
+							sx={{ m: 3, width: '50vw' }}
 							className='inputBoxes2'
-							sx={{ mr: 3 }}
 							labelId='category'
 							id='category'
 							value={category}
@@ -160,7 +161,8 @@ export default function UpdateResource() {
 						<Button
 							style={{ backgroundColor: 'lightgrey' }}
 							variant='contained'
-							color='secondary'>
+							color='secondary'
+							onClick={refreshPage}>
 							<Link href='/Resources'>Cancel</Link>
 						</Button>
 					</div>
