@@ -16,7 +16,7 @@ export default function App() {
 			<Navbar />
 			<div className='mainBody'>
 				<Routes>
-					<Route path='/' element={<HomePage />} />
+					<Route path='/Home' element={<HomePage />} />
 					<Route path='Resources' element={<Resources />} />
 					<Route
 						path='Checklist'
