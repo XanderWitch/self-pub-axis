@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 import logo from '../Images/SPALogo.png';
 
-const pages = ['Resources', 'Checklist'];
+const pages = ['Home', 'Resources', 'Checklist'];
 
 const Navbar = () => {
 	const [anchorElNav, setAnchorElNav] = React.useState(null);
