@@ -44,7 +44,7 @@ const Navbar = () => {
 								textDeocoration: 'none',
 								color: 'black',
 							}}
-							to={`${process.env.PUBLIC_URL}/`}>
+							to={'/'}>
 							{
 								<img
 									src={logo}
@@ -96,7 +96,7 @@ const Navbar = () => {
 													'none',
 												color: 'black',
 											}}
-											to={`${process.env.PUBLIC_URL}/${page}`}>
+											to={`/${page}`}>
 											{page}
 										</Link>
 									</Typography>
@@ -117,7 +117,7 @@ const Navbar = () => {
 								textDeocoration: 'none',
 								color: 'white',
 							}}
-							to={`${process.env.PUBLIC_URL}/`}>
+							to={'/'}>
 							{
 								<img
 									src={logo}
@@ -149,7 +149,7 @@ const Navbar = () => {
 											textDeocoration: 'none',
 											color: 'white',
 										}}
-										to={`${process.env.PUBLIC_URL}/${page}`}>
+										to={`/${page}`}>
 										{page}
 									</Link>
 								</Typography>
