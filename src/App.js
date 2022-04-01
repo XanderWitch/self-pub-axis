@@ -18,7 +18,7 @@ export default function App() {
 			<div className='mainBody'>
 				<Routes>
 					<Router basename={'/self-pub-axis'}>
-						<Route path='/Home' element={<HomePage />} />
+						<Route path='/' element={<HomePage />} />
 						<Route path='Resources' element={<Resources />} />
 						<Route
 							path='Checklist'
