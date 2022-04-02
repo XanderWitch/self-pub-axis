@@ -7,8 +7,6 @@ import Resources from './Components/Resources';
 import Checklist from './Components/Checklist';
 import UpdateResource from './Components/Resources/UpdateResource';
 import Footer from './Components/Footer';
-import { BrowserRouter } from 'react-router-dom';
-
 import { Route, Routes } from 'react-router';
 
 export default function App() {
@@ -17,12 +15,18 @@ export default function App() {
 			<Navbar />
 			<div className='mainBody'>
 				<Routes>
-					<Route path='/Home' element={<HomePage />} />
-					<Route path='Resources' element={<Resources />} />
+					<Route path='/self-pub-axis' element={<HomePage />} />
 					<Route
-						path='Checklist'
+						path='/self-pub-axis/Resources'
+						element={<Resources />}
+					/>
+					<Route
+						path='/self-pub-axis/Checklist'
 						element={<Checklist />}></Route>
-					<Route path='Update' element={<UpdateResource />} />
+					<Route
+						path='/self-pub-axis/Update'
+						element={<UpdateResource />}
+					/>
 				</Routes>
 			</div>
 			<Footer />

@@ -44,7 +44,7 @@ const Navbar = () => {
 								textDeocoration: 'none',
 								color: 'black',
 							}}
-							to={'/Home'}>
+							to={'/self-pub-axis'}>
 							{
 								<img
 									src={logo}
@@ -96,7 +96,7 @@ const Navbar = () => {
 													'none',
 												color: 'black',
 											}}
-											to={`/${page}`}>
+											to={`/self-pub-axis/${page}`}>
 											{page}
 										</Link>
 									</Typography>
@@ -117,7 +117,7 @@ const Navbar = () => {
 								textDeocoration: 'none',
 								color: 'white',
 							}}
-							to={'/Home'}>
+							to={'/self-pub-axis'}>
 							{
 								<img
 									src={logo}
@@ -149,7 +149,7 @@ const Navbar = () => {
 											textDeocoration: 'none',
 											color: 'white',
 										}}
-										to={`/${page}`}>
+										to={`/self-pub-axis/${page}`}>
 										{page}
 									</Link>
 								</Typography>
