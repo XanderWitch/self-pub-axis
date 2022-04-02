@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/self-pub-axis/static/css/main.62798c45.css",
-    "main.js": "/self-pub-axis/static/js/main.ad395d72.js",
+    "main.js": "/self-pub-axis/static/js/main.98b0a7f1.js",
     "static/media/BNPressImage.jpg": "/self-pub-axis/static/media/BNPressImage.42b6c42a8b157f978462.jpg",
     "static/media/LuluImage.jpg": "/self-pub-axis/static/media/LuluImage.337488793fe98c358d71.jpg",
     "static/media/D2DImage.jpg": "/self-pub-axis/static/media/D2DImage.20364af42d311e3b8f1f.jpg",
@@ -14,10 +14,10 @@
     "static/media/SPALogo.png": "/self-pub-axis/static/media/SPALogo.9cc8234c0def3f05924e.png",
     "index.html": "/self-pub-axis/index.html",
     "main.62798c45.css.map": "/self-pub-axis/static/css/main.62798c45.css.map",
-    "main.ad395d72.js.map": "/self-pub-axis/static/js/main.ad395d72.js.map"
+    "main.98b0a7f1.js.map": "/self-pub-axis/static/js/main.98b0a7f1.js.map"
   },
   "entrypoints": [
     "static/css/main.62798c45.css",
-    "static/js/main.ad395d72.js"
+    "static/js/main.98b0a7f1.js"
   ]
 }
