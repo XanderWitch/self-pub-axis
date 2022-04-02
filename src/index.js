@@ -5,7 +5,7 @@ import './index.css';
 
 const rootElement = document.getElementById('root');
 render(
-	<BrowserRouter basename='/self-pub-axis/Home'>
+	<BrowserRouter>
 		<App />
 	</BrowserRouter>,
 	rootElement
