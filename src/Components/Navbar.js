@@ -44,7 +44,7 @@ const Navbar = () => {
 								textDeocoration: 'none',
 								color: 'black',
 							}}
-							to={'/'}>
+							to={'/Home'}>
 							{
 								<img
 									src={logo}
@@ -117,7 +117,7 @@ const Navbar = () => {
 								textDeocoration: 'none',
 								color: 'white',
 							}}
-							to={'/'}>
+							to={'/Home'}>
 							{
 								<img
 									src={logo}
