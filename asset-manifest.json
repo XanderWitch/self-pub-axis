@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.62798c45.css",
-    "main.js": "/static/js/main.de839119.js",
-    "static/media/BNPressImage.jpg": "/static/media/BNPressImage.42b6c42a8b157f978462.jpg",
-    "static/media/LuluImage.jpg": "/static/media/LuluImage.337488793fe98c358d71.jpg",
-    "static/media/D2DImage.jpg": "/static/media/D2DImage.20364af42d311e3b8f1f.jpg",
-    "static/media/AmazonKDP.jpg": "/static/media/AmazonKDP.dbf5b4da6ab6009e0152.jpg",
-    "static/media/AppleImage.jpg": "/static/media/AppleImage.54c2881cc9b5786997c6.jpg",
-    "static/media/GooglePlayImage.jpg": "/static/media/GooglePlayImage.e32edbe5b3243d97dca4.jpg",
-    "static/media/PubDriveImage.jpg": "/static/media/PubDriveImage.0cb18709cadffb7d4126.jpg",
-    "static/media/koboimage.jpg": "/static/media/koboimage.a9390766ee09646c5566.jpg",
-    "static/media/ingram-spark.jpg": "/static/media/ingram-spark.3e20949366bcbf0f9129.jpg",
-    "static/media/SPALogo.png": "/static/media/SPALogo.9cc8234c0def3f05924e.png",
-    "index.html": "/index.html",
-    "main.62798c45.css.map": "/static/css/main.62798c45.css.map",
-    "main.de839119.js.map": "/static/js/main.de839119.js.map"
+    "main.css": "//xanderwitch.github.io/static/css/main.62798c45.css",
+    "main.js": "//xanderwitch.github.io/static/js/main.6357eae9.js",
+    "static/media/BNPressImage.jpg": "//xanderwitch.github.io/static/media/BNPressImage.42b6c42a8b157f978462.jpg",
+    "static/media/LuluImage.jpg": "//xanderwitch.github.io/static/media/LuluImage.337488793fe98c358d71.jpg",
+    "static/media/D2DImage.jpg": "//xanderwitch.github.io/static/media/D2DImage.20364af42d311e3b8f1f.jpg",
+    "static/media/AmazonKDP.jpg": "//xanderwitch.github.io/static/media/AmazonKDP.dbf5b4da6ab6009e0152.jpg",
+    "static/media/AppleImage.jpg": "//xanderwitch.github.io/static/media/AppleImage.54c2881cc9b5786997c6.jpg",
+    "static/media/GooglePlayImage.jpg": "//xanderwitch.github.io/static/media/GooglePlayImage.e32edbe5b3243d97dca4.jpg",
+    "static/media/PubDriveImage.jpg": "//xanderwitch.github.io/static/media/PubDriveImage.0cb18709cadffb7d4126.jpg",
+    "static/media/koboimage.jpg": "//xanderwitch.github.io/static/media/koboimage.a9390766ee09646c5566.jpg",
+    "static/media/ingram-spark.jpg": "//xanderwitch.github.io/static/media/ingram-spark.3e20949366bcbf0f9129.jpg",
+    "static/media/SPALogo.png": "//xanderwitch.github.io/static/media/SPALogo.9cc8234c0def3f05924e.png",
+    "index.html": "//xanderwitch.github.io/index.html",
+    "main.62798c45.css.map": "//xanderwitch.github.io/static/css/main.62798c45.css.map",
+    "main.6357eae9.js.map": "//xanderwitch.github.io/static/js/main.6357eae9.js.map"
   },
   "entrypoints": [
     "static/css/main.62798c45.css",
-    "static/js/main.de839119.js"
+    "static/js/main.6357eae9.js"
   ]
 }
