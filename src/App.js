@@ -7,6 +7,7 @@ import Resources from './Components/Resources';
 import Checklist from './Components/Checklist';
 import UpdateResource from './Components/Resources/UpdateResource';
 import Footer from './Components/Footer';
+import { BrowserRouter } from 'react-router-dom';
 
 import { Route, Routes } from 'react-router';
 
