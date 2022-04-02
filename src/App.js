@@ -18,19 +18,13 @@ export default function App() {
 			<div className='mainBody'>
 				<Routes>
 					<Router basename={'/self-pub-axis'}>
+						<Route path='/' element={<HomePage />} />
+						<Route path='Resources' element={<Resources />} />
 						<Route
-							path={`${process.env.PUBLIC_URL}/`}
-							element={<HomePage />}
-						/>
-						<Route
-							path={`${process.env.PUBLIC_URL}/Resources`}
-							element={<Resources />}
-						/>
-						<Route
-							path={`${process.env.PUBLIC_URL}/Checklist`}
+							path='Checklist'
 							element={<Checklist />}></Route>
 						<Route
-							path={`${process.env.PUBLIC_URL}/Update`}
+							path='Update'
 							element={<UpdateResource />}
 						/>
 					</Router>
