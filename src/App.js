@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router';
 import './App.css';
 import './index.css';
 import Navbar from './Components/Navbar';
@@ -17,21 +17,15 @@ export default function App() {
 			<Navbar />
 			<div className='mainBody'>
 				<Routes>
-					<BrowserRouter basename='/self-pub-axis'>
+					<Router basename={process.env.PUBLIC_URL}>
 						<Route path='/' element={<HomePage />} />
+						<Route path='Resources' element={<Resources />} />
+						<Route path='Checklist' element={<Checklist />} />
 						<Route
-							path='/Resources'
-							element={<Resources />}
-						/>
-						<Route
-							path='/Checklist'
-							element={<Checklist />}
-						/>
-						<Route
-							path='/Update'
+							path='Update'
 							element={<UpdateResource />}
 						/>
-					</BrowserRouter>
+					</Router>
 				</Routes>
 			</div>
 			<Footer />
