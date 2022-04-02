@@ -1,14 +1,6 @@
 {
   "name": "self-pub-axis",
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "homepage": "https://xanderwitch.github.io/",
-=======
-  "homepage": "https://xanderwitch.github.io/self-pub-axis/Home",
->>>>>>> parent of 81b239d (One more change)
-=======
-  "homepage": "https://xanderwitch.github.io/self-pub-axis/Home",
->>>>>>> parent of 81b239d (One more change)
+  "homepage": "https://xanderwitch.github.io/self-pub-axis/",
   "version": "0.1.1",
   "private": true,
   "dependencies": {
