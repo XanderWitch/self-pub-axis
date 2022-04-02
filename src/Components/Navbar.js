@@ -44,12 +44,12 @@ const Navbar = () => {
 								textDeocoration: 'none',
 								color: 'black',
 							}}
-							to={'/Home'}>
+							to={'/'}>
 							{
 								<img
 									src={logo}
 									className='logo'
-									alt='self-publishing axis logo'></img>
+									alt='self-publishing axis logo, purple book surrounded by a circle and arrows pointing in multiple directions, all facing outward'></img>
 							}
 						</Link>
 					</Typography>

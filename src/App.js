@@ -1,5 +1,4 @@
 import React from 'react';
-import { Router } from 'react-router';
 import './App.css';
 import './index.css';
 import Navbar from './Components/Navbar';
@@ -17,17 +16,12 @@ export default function App() {
 			<Navbar />
 			<div className='mainBody'>
 				<Routes>
-					<Router basename={'/self-pub-axis'}>
-						<Route path='/Home' element={<HomePage />} />
-						<Route path='Resources' element={<Resources />} />
-						<Route
-							path='Checklist'
-							element={<Checklist />}></Route>
-						<Route
-							path='Update'
-							element={<UpdateResource />}
-						/>
-					</Router>
+					<Route path='/Home' element={<HomePage />} />
+					<Route path='Resources' element={<Resources />} />
+					<Route
+						path='Checklist'
+						element={<Checklist />}></Route>
+					<Route path='Update' element={<UpdateResource />} />
 				</Routes>
 			</div>
 			<Footer />
