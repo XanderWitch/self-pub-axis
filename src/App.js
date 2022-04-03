@@ -8,21 +8,29 @@ import Checklist from './Components/Checklist';
 import UpdateResource from './Components/Resources/UpdateResource';
 import Footer from './Components/Footer';
 import { Route, Routes } from 'react-router';
-import { Router } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default function App() {
 	return (
 		<div>
 			<Navbar />
 			<div className='mainBody'>
-				<Routes>
-					<Route path='/' element={<HomePage />} />
-					<Route path='/Resources' element={<Resources />} />
-					<Route
-						path='/Checklist'
-						element={<Checklist />}></Route>
-					<Route path='/Update' element={<UpdateResource />} />
-				</Routes>
+				<Router basename='/self-pub-axis'>
+					<Routes>
+						<Route path='/' element={<HomePage />} />
+						<Route
+							path='/Resources'
+							element={<Resources />}
+						/>
+						<Route
+							path='/Checklist'
+							element={<Checklist />}></Route>
+						<Route
+							path='/Update'
+							element={<UpdateResource />}
+						/>
+					</Routes>
+				</Router>
 			</div>
 			<Footer />
 		</div>
