@@ -104,7 +104,7 @@ export default function ResourceCard() {
 										color='text.secondary'>
 										{data.creator}
 									</Typography>
-									<Link href='/Update'>
+									<Link href='self-pub-axis/#/Update'>
 										<Button
 											variant='contained'
 											style={{
