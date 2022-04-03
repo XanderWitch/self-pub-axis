@@ -104,7 +104,7 @@ export default function ResourceCard() {
 										color='text.secondary'>
 										{data.creator}
 									</Typography>
-									<Link href='/#/Update'>
+									<Link href='/Update'>
 										<Button
 											variant='contained'
 											style={{
