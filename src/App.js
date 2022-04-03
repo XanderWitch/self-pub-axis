@@ -8,14 +8,14 @@ import Checklist from './Components/Checklist';
 import UpdateResource from './Components/Resources/UpdateResource';
 import Footer from './Components/Footer';
 import { Route, Routes } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default function App() {
 	return (
 		<div>
 			<Navbar />
 			<div className='mainBody'>
-				<BrowserRouter basename='/self-pub-axis'>
+				<Router basename='/self-pub-axis'>
 					<Routes>
 						<Route path='/' element={<HomePage />} />
 						<Route
@@ -30,7 +30,7 @@ export default function App() {
 							element={<UpdateResource />}
 						/>
 					</Routes>
-				</BrowserRouter>
+				</Router>
 			</div>
 			<Footer />
 		</div>
