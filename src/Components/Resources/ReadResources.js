@@ -54,6 +54,11 @@ export default function ResourceCard() {
 		localStorage.setItem('Link', link);
 	};
 
+	const getDataGoToUpdatePage = (data) => {
+		setData(data);
+		navigate('/self-pub-axis/#/Update');
+	};
+
 	return (
 		<div className='resourceCard'>
 			{APIData.map((data, _id) => (
@@ -107,20 +112,22 @@ export default function ResourceCard() {
 										color='text.secondary'>
 										{data.creator}
 									</Typography>
-									<Link to='/Update'>
-										<Button
-											variant='contained'
-											style={{
-												backgroundColor:
-													'indigo',
-											}}
-											sx={{ m: 1 }}
-											onClick={() =>
-												setData(data)
-											}>
-											Update
-										</Button>
-									</Link>
+
+									<Button
+										variant='contained'
+										style={{
+											backgroundColor:
+												'indigo',
+										}}
+										sx={{ m: 1 }}
+										onClick={() =>
+											getDataGoToUpdatePage(
+												data
+											)
+										}>
+										Update
+									</Button>
+
 									<Button
 										variant='contained'
 										style={{
