@@ -27,7 +27,7 @@ const Navbar = () => {
 
 	return (
 		<AppBar
-			position='static'
+			position='sticky'
 			style={{ background: 'indigo', margin: '0' }}>
 			<Container maxWidth='xl'>
 				<Toolbar disableGutters>

@@ -46,9 +46,6 @@ export default function UpdateResource() {
 	function refreshPage() {
 		window.location.reload(false);
 	}
-	const goBack = () => {
-		navigate('/Resources');
-	};
 
 	const updateAPIData = () => {
 		axios.put(`${ENDPOINT}/${id}`, {
@@ -63,8 +60,7 @@ export default function UpdateResource() {
 			.catch(function (error) {
 				console.log(error);
 			});
-		goBack();
-		refreshPage();
+		navigate('/self-pub-axis/Resources');
 	};
 
 	return (
