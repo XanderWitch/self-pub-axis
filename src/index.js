@@ -3,10 +3,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import './index.css';
 
+import { HashRouter as Router } from 'react-router-dom';
+
 const rootElement = document.getElementById('root');
 render(
-	<BrowserRouter>
+	<Router>
 		<App />
-	</BrowserRouter>,
+	</Router>,
 	rootElement
 );

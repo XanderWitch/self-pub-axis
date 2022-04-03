@@ -60,7 +60,7 @@ export default function UpdateResource() {
 			.catch(function (error) {
 				console.log(error);
 			});
-		navigate('/self-pub-axis/Resources');
+		navigate('/Resources');
 	};
 
 	return (

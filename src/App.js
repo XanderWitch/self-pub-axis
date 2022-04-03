@@ -15,18 +15,12 @@ export default function App() {
 			<Navbar />
 			<div className='mainBody'>
 				<Routes>
-					<Route path='/self-pub-axis' element={<HomePage />} />
+					<Route path='/' element={<HomePage />} />
+					<Route path='/Resources' element={<Resources />} />
 					<Route
-						path='/self-pub-axis/Resources'
-						element={<Resources />}
-					/>
-					<Route
-						path='/self-pub-axis/Checklist'
+						path='/Checklist'
 						element={<Checklist />}></Route>
-					<Route
-						path='/self-pub-axis/Update'
-						element={<UpdateResource />}
-					/>
+					<Route path='/Update' element={<UpdateResource />} />
 				</Routes>
 			</div>
 			<Footer />
