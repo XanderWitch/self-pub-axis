@@ -56,7 +56,7 @@ export default function ResourceCard() {
 
 	const getDataGoToUpdatePage = (data) => {
 		setData(data);
-		navigate('/Resources');
+		navigate('/#/Resources');
 	};
 
 	return (
