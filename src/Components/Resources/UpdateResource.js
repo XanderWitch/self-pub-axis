@@ -60,7 +60,7 @@ export default function UpdateResource() {
 			.catch(function (error) {
 				console.log(error);
 			});
-		navigate('/Resources');
+		navigate('/#/Resources');
 	};
 
 	return (
@@ -160,7 +160,7 @@ export default function UpdateResource() {
 							variant='contained'
 							color='secondary'
 							onClick={refreshPage}>
-							<Link href='../Resources'>Cancel</Link>
+							<Link href='/#/Resources'>Cancel</Link>
 						</Button>
 					</div>
 				</form>

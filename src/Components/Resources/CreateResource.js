@@ -7,12 +7,14 @@ import { Button } from '@mui/material';
 import { Select } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
+import { useNavigate } from 'react-router';
 
 export default function CreateResource() {
 	const [title, setTitle] = useState('');
 	const [creator, setCreator] = useState('');
 	const [link, setLink] = useState('');
 	const [category, setCategory] = useState('');
+	let navigate = useNavigate();
 
 	const postData = () => {
 		axios.post(
@@ -25,6 +27,8 @@ export default function CreateResource() {
 			}
 		);
 	};
+
+	const [rerender, setRerender] = useState(false);
 
 	function refreshPage() {
 		window.location.reload(false);
