@@ -12,7 +12,7 @@ export default function ResourceCard() {
 	const ENDPOINT =
 		'https://crudcrud.com/api/776d23438df143b9be860123700b634d/pubResources';
 
-	let navigate = useNavigate();
+	let navigate = useNavigate;
 
 	const [APIData, setAPIData] = useState([]);
 	useEffect(() => {
@@ -56,7 +56,7 @@ export default function ResourceCard() {
 
 	const getDataGoToUpdatePage = (data) => {
 		setData(data);
-		navigate('/#/Resources');
+		navigate('/self-pub-axis/#/Update');
 	};
 
 	return (
@@ -112,22 +112,22 @@ export default function ResourceCard() {
 										color='text.secondary'>
 										{data.creator}
 									</Typography>
-									<Link href='../Update'>
-										<Button
-											variant='contained'
-											style={{
-												backgroundColor:
-													'indigo',
-											}}
-											sx={{ m: 1 }}
-											onClick={() =>
-												getDataGoToUpdatePage(
-													data
-												)
-											}>
-											Update
-										</Button>
-									</Link>
+
+									<Button
+										variant='contained'
+										style={{
+											backgroundColor:
+												'indigo',
+										}}
+										sx={{ m: 1 }}
+										onClick={() =>
+											getDataGoToUpdatePage(
+												data
+											)
+										}>
+										Update
+									</Button>
+
 									<Button
 										variant='contained'
 										style={{
