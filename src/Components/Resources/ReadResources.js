@@ -6,10 +6,13 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Link } from '@mui/material';
+import { useNavigate } from 'react-router';
 
 export default function ResourceCard() {
 	const ENDPOINT =
 		'https://crudcrud.com/api/776d23438df143b9be860123700b634d/pubResources';
+
+	let navigate = useNavigate();
 
 	const [APIData, setAPIData] = useState([]);
 	useEffect(() => {
@@ -49,6 +52,11 @@ export default function ResourceCard() {
 		localStorage.setItem('Creator', creator);
 		localStorage.setItem('Category', category);
 		localStorage.setItem('Link', link);
+	};
+
+	const getDataGoToUpdatePage = (data) => {
+		setData(data);
+		navigate('/Resources');
 	};
 
 	return (
@@ -104,7 +112,7 @@ export default function ResourceCard() {
 										color='text.secondary'>
 										{data.creator}
 									</Typography>
-									<Link href='self-pub-axis/#/Update'>
+									<Link href='../Update'>
 										<Button
 											variant='contained'
 											style={{
@@ -113,7 +121,9 @@ export default function ResourceCard() {
 											}}
 											sx={{ m: 1 }}
 											onClick={() =>
-												setData(data)
+												getDataGoToUpdatePage(
+													data
+												)
 											}>
 											Update
 										</Button>
