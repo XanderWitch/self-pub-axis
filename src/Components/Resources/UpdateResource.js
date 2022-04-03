@@ -164,9 +164,7 @@ export default function UpdateResource() {
 							variant='contained'
 							color='secondary'
 							onClick={refreshPage}>
-							<Link href='/self-pub-axis/Resources'>
-								Cancel
-							</Link>
+							<Link href='/Resources'>Cancel</Link>
 						</Button>
 					</div>
 				</form>
